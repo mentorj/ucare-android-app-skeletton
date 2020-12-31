@@ -49,12 +49,19 @@ dependencies {
     kapt "org.greenrobot:eventbus-annotation-processor:$eventbus_version"
     kapt 'androidx.room:room-compiler:2.2.6'
 
+    def work_version = "2.4.0"
+
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    // optional - Test helpers
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }
-//kapt {
-//    arguments {
-//        arg('eventBusIndex', 'com.ucare.android.demo.MyEventBusIndex')
-//    }
-//}
+kapt {
+    arguments {
+        arg('eventBusIndex', 'com.ucare.android.demo.MyEventBusIndex')
+    }
+}

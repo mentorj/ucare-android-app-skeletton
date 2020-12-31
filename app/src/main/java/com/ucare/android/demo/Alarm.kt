@@ -11,7 +11,7 @@ import java.util.*
 @Entity
 data class Alarm (@PrimaryKey val id :UUID =UUID.randomUUID(),
                 var type:String="",
-                  var timestamp: Timestamp,
+                  var timestamp: Long,
                   var emergency: EmergencyLevel,
                   var alarmType: AlarmType,
                   var confidenceLevel: ConfidenceLevel,
