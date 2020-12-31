@@ -16,11 +16,13 @@
             android:theme="@style/Theme.UcareDemo.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <service android:name=".UcareSetupService" />
+        <service android:name=".DataAgrregatorService"/>
+        <service android:name=".DataCollectorService"/>
+        <service android:name=".DecisionTreeService"/>
     </application>
 
 </manifest>

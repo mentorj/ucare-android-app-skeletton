@@ -13,12 +13,20 @@ class UcareSetupService : Service() {
     private val TAG:String="UcareSetupService"
 
     override fun onBind(intent: Intent?): IBinder? {
-        TODO("Not yet implemented")
-        Log.d(TAG,"onBind() called")
+        Log.d(TAG,"onBind() called, why ?")
+        return null
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.d(TAG,"onStartedCommand called")
-        return super.onStartCommand(intent, flags, startId)
+        // create intents then start services using intents
+        val collectorIntent :Intent = Intent(this,DataCollectorService::class.java)
+        val aggregatorIntent:Intent = Intent(this,DataAgrregatorService::class.java)
+        val decisionTreeIntent:Intent = Intent(this,DecisionTreeService::class.java)
+        startService(collectorIntent)
+        startService(aggregatorIntent)
+        startService(decisionTreeIntent)
+        Log.i(TAG,"onStartCOmmand() finished, service about starting")
+        return Service.START_STICKY
     }
 }
