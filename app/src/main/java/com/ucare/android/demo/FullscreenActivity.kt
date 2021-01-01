@@ -1,6 +1,5 @@
 package com.ucare.android.demo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +7,10 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.ucare.android.demo.databinding.ActivityFullscreenBinding
+import org.greenrobot.eventbus.EventBus
+
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -83,6 +85,8 @@ class    FullscreenActivity : AppCompatActivity() {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         binding.dummyButton.setOnTouchListener(delayHideTouchListener)
+
+
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
