@@ -1,0 +1,36 @@
+=  Ucare's demo  Android application documentation
+Jerome MOLIERE  - Ucare SAS jerome@ucare-watches.com
+Version 1.0 - Janvier 2021
+:sectnums:
+:toc:
+:toclevels: 2
+:toc-title: Table of contents
+
+:description: documentation for the Ucare skeletton application
+:keywords: Android, architecture
+:imagesdir: ./img
+
+This document aims to provide basic guidelines to use & improve the Android application
+
+== Goals
+The application aims to be a skeletton, it does not work, it is not finished but:
+
+* show main concepts & entities required
+* import most of the application required libraries
+** JTranforms for FFT computations
+** EventBus for communication between components
+** Eclipse MQTT client for MQTT message passing
+** Room for data persistence
+* setup some entities in the  correct way:
+** proper configuration for kapt Annotation Processor
+** gather all pieces required for object persistence to database with Room
+** configure EventBus the right way (with indices)
+** services communication through EventBus messages with Event classes
+
+== Missing parts
+This is only a skeletton so :
+
+* code is not tested (no unit testing)
+* code has not even been launched
+* most classes are  merely stubs and should be enchanced and fixed
+
