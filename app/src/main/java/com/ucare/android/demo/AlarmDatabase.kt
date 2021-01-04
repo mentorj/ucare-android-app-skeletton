@@ -9,7 +9,7 @@ import androidx.room.TypeConverters
  * Room uses the converter class to read/store complex types
  * and knows which DAO to use
  */
-@Database(entities = [Alarm::class],version = 1)
+@Database(entities = [Alarm::class,RawData::class],version = 1)
 @TypeConverters(CustomRoomTypeConverter::class)
 abstract class AlarmDatabase : RoomDatabase() {
     abstract fun alarmDao() : AlarmDao

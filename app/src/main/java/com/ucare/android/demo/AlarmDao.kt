@@ -19,4 +19,16 @@ interface AlarmDao {
 
     @Insert
     fun insertAlarmsList(alarms:List<Alarm>?):List<Long>?
+
+    @Query("SELECT *  from rawdata")
+    fun listRawData():List<RawData>
+
+    @Query("SELECT * FROM rawdata where sensorType=(:sensorType) AND  timestamp>(:fromTs)")
+    fun fetchLastDataByType(sensorType: SensorType,fromTs:Long):List<RawData>
+
+    @Insert
+    fun insertRawData(data: RawData):Long
+
+    @Insert
+    fun insertRawDataList(dataSet : List<RawData>):List<Long>
 }

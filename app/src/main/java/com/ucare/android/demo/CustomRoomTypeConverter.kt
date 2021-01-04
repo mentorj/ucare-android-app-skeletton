@@ -31,6 +31,21 @@ class CustomRoomTypeConverter {
     }
 
     @TypeConverter
+    fun fromSensorType2Int(type:SensorType?) :Int?{
+        return type?.type
+    }
+
+    @TypeConverter
+    fun fromInt2SensorType(type: Int?):SensorType?{
+        return SensorType.values().asList().filter { t -> t.type == type }.first()
+    }
+//
+//    @TypeConverter
+//    fun fromByteArray2Blob(data:Array[bte]?):{
+//
+//    }
+
+    @TypeConverter
     fun fromAlarmTypeToInt(type :AlarmType?) : Int?{
         return type?.type
     }
